@@ -35,13 +35,20 @@ function buttonVisible() {
 
 function newTweet() {
   let tweet = textTweet.value;
+  const hoursandDate = RetornaDataHoraAtual();
   let li = document.createElement("li");
+  let span = document.createElement("span");
   let div = document.createElement("div");
   const newTweet = document.createTextNode(tweet);
+  const date = document.createTextNode(hoursandDate);
   li.appendChild(newTweet);
-  li.setAttribute("class", "tweets-list font-size-tweet");
-  listTweet.appendChild(li);
+  span.appendChild(date);
+  div.appendChild(li);
+  div.appendChild(span);
+  div.setAttribute("class", "tweets-list font-size-tweet");
+  listTweet.appendChild(div);
   clear();
+
 }
 
 function newRows() {
@@ -53,3 +60,10 @@ function clear() {
   counter.innerHTML = 140;
   buttonTweet.setAttribute("disabled", "disabled");
 }
+
+function RetornaDataHoraAtual(){
+  var dNow = new Date();
+  var localdate = dNow.getDate() + '/' + (dNow.getMonth()+1) + '/' + dNow.getFullYear() + ' ' + dNow.getHours() + ':' + dNow.getMinutes();
+  return localdate;
+}
+
