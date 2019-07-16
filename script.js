@@ -35,7 +35,7 @@ function buttonVisible() {
 
 function newTweet() {
   let tweet = textTweet.value;
-  const hoursandDate = RetornaDataHoraAtual();
+  const hoursandDate = hoursandDate();
   let li = document.createElement("li");
   let span = document.createElement("span");
   let div = document.createElement("div");
@@ -60,7 +60,7 @@ function clear() {
   buttonTweet.setAttribute("disabled", "disabled");
 }
 
-function RetornaDataHoraAtual(){
+function hoursandDate(){
   const dNow = new Date();
   const localdate = dNow.getDate() + '/' + (dNow.getMonth()+1) + '/' + dNow.getFullYear() + ' ' + dNow.getHours() + ':' + dNow.getMinutes();
   return localdate;
