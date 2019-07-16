@@ -48,7 +48,6 @@ function newTweet() {
   div.setAttribute("class", "tweets-list font-size-tweet");
   listTweet.appendChild(div);
   clear();
-
 }
 
 function newRows() {
@@ -62,8 +61,8 @@ function clear() {
 }
 
 function RetornaDataHoraAtual(){
-  var dNow = new Date();
-  var localdate = dNow.getDate() + '/' + (dNow.getMonth()+1) + '/' + dNow.getFullYear() + ' ' + dNow.getHours() + ':' + dNow.getMinutes();
+  const dNow = new Date();
+  const localdate = dNow.getDate() + '/' + (dNow.getMonth()+1) + '/' + dNow.getFullYear() + ' ' + dNow.getHours() + ':' + dNow.getMinutes();
   return localdate;
 }
 
